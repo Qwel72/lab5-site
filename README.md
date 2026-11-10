@@ -32,7 +32,7 @@ python -m http.server 8000
 
 Для публикации владелец должен открыть **Settings → Pages → Build and deployment → Deploy from a branch**, выбрать `main` и `/(root)` и нажать **Save**.
 
-Ожидаемый адрес после успешной публикации: https://qwel72.github.io/lab5-site/ . На момент подготовки эта публикация НЕ подтверждена: GitHub App получил HTTP 403 при включении Pages. Адрес нельзя считать рабочим до успешного deployment и проверки HTTP 200.
+Опубликованный и проверенный сайт: https://qwel72.github.io/lab5-site/ . GitHub Pages включён 10.11.2026, источник `main` и `/(root)`, сборка завершилась со статусом `built`. Проверены HTTP 200 и совпадение SHA-256 HTML/CSS/JS и трёх фотографий с локальным проектом.
 
 ## Использование ИИ
 

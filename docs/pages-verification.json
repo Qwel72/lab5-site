@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-10",
+  "source": "main:/",
+  "resources": [
+    {
+      "url": "https://qwel72.github.io/lab5-site/",
+      "status": 200,
+      "bytes": 16104,
+      "sha256": "0ab3d8ad3f26f8ebe6418e6048cafe45a111fc5e0b30f5ee1cf554a7cd451a4d",
+      "matches_local": true
+    },
+    {
+      "url": "https://qwel72.github.io/lab5-site/styles.css",
+      "status": 200,
+      "bytes": 9635,
+      "sha256": "d427871becdd193463bef6cf5a25d43eb9724243c49ce1621deae327f4aa558e",
+      "matches_local": true
+    },
+    {
+      "url": "https://qwel72.github.io/lab5-site/script.js",
+      "status": 200,
+      "bytes": 4379,
+      "sha256": "ae0a069360802c4309ff8dbeb0a79a041a644e792341c9f8d46ab391624a7185",
+      "matches_local": true
+    },
+    {
+      "url": "https://qwel72.github.io/lab5-site/images/earth-apollo17.jpg",
+      "status": 200,
+      "bytes": 238216,
+      "sha256": "575a8567320e1176ddaf9e9a52cb6a2e060631c2503c88ed28808e9d77d2cd0d",
+      "matches_local": true
+    },
+    {
+      "url": "https://qwel72.github.io/lab5-site/images/moon-galileo.jpg",
+      "status": 200,
+      "bytes": 196998,
+      "sha256": "fc8f9eb20667c2d3c8aa92954c86c06c8dd9a2ae93be9c78b3586dcfaface47d",
+      "matches_local": true
+    },
+    {
+      "url": "https://qwel72.github.io/lab5-site/images/jupiter-voyager2.jpg",
+      "status": 200,
+      "bytes": 47334,
+      "sha256": "c52b4277bef18f7fbf6471bf7a426bc5fb698b6cd94216ea587bd118e288bc42",
+      "matches_local": true
+    }
+  ]
+}
