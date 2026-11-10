@@ -106,3 +106,6 @@
 
     /* Grid children must shrink on narrow screens (320px). */
     .application > *{min-width:0}
+
+    /* Visible result of the Lab 6 automatic deployment. */
+    .ci-status{display:inline-block;margin:0 0 18px;padding:8px 14px;border:1px solid var(--navy);border-radius:12px;background:var(--amber);color:var(--navy);font-size:.9rem;font-weight:700}

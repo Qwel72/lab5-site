@@ -1,0 +1,17 @@
+{
+  "name": "orbita-lab6-ci",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quality checks for the Orbita static website",
+  "scripts": {
+    "lint:html": "html-validate index.html",
+    "lint:css": "stylelint styles.css",
+    "lint": "npm run lint:html && npm run lint:css",
+    "test:site": "node --check script.js && python3 scripts/check_site.py && python3 scripts/test_quality_gate.py",
+    "build": "python3 scripts/build_site.py"
+  },
+  "devDependencies": {
+    "html-validate": "10.7.0",
+    "stylelint": "16.26.1"
+  }
+}
