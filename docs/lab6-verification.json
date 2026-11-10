@@ -1,0 +1,62 @@
+{
+  "verified_at": "2026-11-10T21:35:50.464933+00:00",
+  "site": "https://qwel72.github.io/lab5-site/",
+  "commit": "7db7a671443b4df8c7f313ccfb33852ff8e1a810",
+  "event": "push",
+  "run_id": 42906122816,
+  "run_url": "https://github.com/Qwel72/lab5-site/actions/runs/42906122816",
+  "resources": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 16203,
+      "sha256": "16eb3421690dbc64313ecdfedc32395811b125a45b333cab0f38e11680e6a03a",
+      "matches_local": true
+    },
+    {
+      "path": "styles.css",
+      "status": 200,
+      "bytes": 9888,
+      "sha256": "6b1cef3b3e018bba520cbeadee7e288a1caefbde4ff53243dc58c1b67677ad3d",
+      "matches_local": true
+    },
+    {
+      "path": "script.js",
+      "status": 200,
+      "bytes": 4379,
+      "sha256": "ae0a069360802c4309ff8dbeb0a79a041a644e792341c9f8d46ab391624a7185",
+      "matches_local": true
+    },
+    {
+      "path": "images/earth-apollo17.jpg",
+      "status": 200,
+      "bytes": 238216,
+      "sha256": "575a8567320e1176ddaf9e9a52cb6a2e060631c2503c88ed28808e9d77d2cd0d",
+      "matches_local": true
+    },
+    {
+      "path": "images/moon-galileo.jpg",
+      "status": 200,
+      "bytes": 196998,
+      "sha256": "fc8f9eb20667c2d3c8aa92954c86c06c8dd9a2ae93be9c78b3586dcfaface47d",
+      "matches_local": true
+    },
+    {
+      "path": "images/jupiter-voyager2.jpg",
+      "status": 200,
+      "bytes": 47334,
+      "sha256": "c52b4277bef18f7fbf6471bf7a426bc5fb698b6cd94216ea587bd118e288bc42",
+      "matches_local": true
+    }
+  ],
+  "deployment": {
+    "commit": "7db7a671443b4df8c7f313ccfb33852ff8e1a810",
+    "run_id": "42906122816",
+    "built_at": "2026-11-10T21:33:24.674614+00:00"
+  },
+  "visible_change": {
+    "before": "Большой космос. Понятное начало.",
+    "after": "Большой космос. Теперь ближе.",
+    "notice": "Обновлено автоматически через GitHub Actions"
+  }
+}
