@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Учебный лендинг студенческого астроклуба «Орбита»: знакомство с небом, основы наблюдений и демонстрационные встречи для начинающих.">
+  <meta http-equiv="Content-Security-Policy" content="form-action 'none'">
+  <title>Орбита — начните знакомство с небом</title>
+  <style>
+    :root{--paper:#faf7ee;--navy:#172943;--muted:#4d5b6d;--amber:#f0b44c;--line:#d8d9d2;--white:#fffdf7;--soft:#f0ecdf;--radius:20px}
+    *{box-sizing:border-box}
+    html{scroll-padding-top:24px}
+    body{margin:0;background:var(--paper);color:var(--navy);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;overflow-wrap:break-word}
+    a{color:inherit;text-underline-offset:5px}
+    a:hover{text-decoration-thickness:2px}
+    :focus-visible{outline:3px solid var(--navy);outline-offset:5px}
+    .wrap{width:min(1120px,calc(100% - 48px));margin-inline:auto}
+    .skip{position:absolute;left:16px;top:-100px;padding:10px 16px;background:var(--navy);color:var(--paper);z-index:2}
+    .skip:focus{top:12px}
+    .header-inner{display:flex;justify-content:space-between;align-items:center;gap:20px 36px;flex-wrap:wrap;padding-block:25px;border-bottom:1px solid var(--line)}
+    .brand{display:inline-flex;align-items:center;gap:11px;font-size:1.45rem;font-weight:800;letter-spacing:-.04em;text-decoration:none}
+    .brand-mark{width:24px;height:24px;border:2px solid var(--navy);border-radius:50%;position:relative;transform:rotate(-30deg)}
+    .brand-mark::after{content:"";position:absolute;width:34px;height:10px;top:5px;left:-7px;border:2px solid #976118;border-radius:50%}
+    nav{display:flex;flex-wrap:wrap;gap:8px 23px;font-size:.9rem;font-weight:600}
+    nav a{padding-block:5px;text-decoration:none}
+    nav a:hover{text-decoration:underline}
+    .hero{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center;padding-block:76px 65px}
+    .eyebrow{margin:0 0 20px;font-size:.76rem;font-weight:750;letter-spacing:.13em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+    .eyebrow::before{content:"";width:8px;height:8px;background:var(--amber);border-radius:50%;flex:none}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(2.7rem,5.5vw,4.7rem);line-height:1.08;letter-spacing:-.055em;margin-bottom:25px;font-weight:750}
+    h2{font-size:clamp(1.85rem,3.5vw,2.75rem);line-height:1.17;letter-spacing:-.04em;margin-bottom:18px}
+    h3{font-size:1.25rem;line-height:1.35;letter-spacing:-.02em;margin-bottom:12px}
+    p{margin-bottom:18px}
+    .lead{font-size:1.12rem;color:var(--muted);max-width:48ch}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border:1px solid var(--navy);border-radius:8px;text-decoration:none;font-weight:700;font-size:.95rem;line-height:1.5}
+    .button-primary{background:var(--navy);color:var(--paper)}
+    .button-primary:hover{background:#2b405e}
+    .button-secondary:hover{background:var(--soft)}
+    .hero-note{font-size:.82rem;color:var(--muted);margin:20px 0 0}
+    .orbit-panel{background:var(--navy);border-radius:50% 50% 20px 20px;aspect-ratio:1/1.06;display:flex;align-items:center;justify-content:center;position:relative;min-width:0}
+    .orbit-panel svg{width:100%;height:auto;display:block}
+    .orbit-caption{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#e1dfd4;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+    section.content{padding-block:68px;border-top:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:1fr 1fr;gap:24px 60px;align-items:start;margin-bottom:30px}
+    .section-head p{color:var(--muted);max-width:53ch;margin-bottom:0}
+    .section-number{display:block;font-size:.77rem;letter-spacing:.1em;font-weight:700;color:var(--muted);margin-bottom:12px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .about-box{border-left:3px solid var(--amber);padding:4px 0 4px 24px}
+    .about-box p{margin-bottom:0;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .card{padding:28px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+    .card p{color:var(--muted);margin-bottom:0}
+    .card-symbol{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #b4b9bd;border-radius:50%;font-size:1.4rem;margin-bottom:26px}
+    .card-index{font-size:.75rem;color:var(--muted);margin-bottom:14px;letter-spacing:.08em}
+    .meeting{display:flex;flex-direction:column}
+    .tag{align-self:flex-start;border-radius:5px;background:#f7e6c4;color:#644511;font-size:.73rem;font-weight:750;padding:4px 9px;margin-bottom:20px}
+    .meeting dl{font-size:.86rem;margin:24px 0;display:grid;grid-template-columns:auto 1fr;gap:5px 10px;border-top:1px solid var(--line);padding-top:18px}
+    .meeting dt{color:var(--muted)}
+    .meeting dd{margin:0}
+    .meeting a{margin-top:auto;font-size:.9rem;font-weight:700;align-self:flex-start}
+    .first-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+    .steps{list-style:none;padding:0;margin:0;counter-reset:step}
+    .steps li{counter-increment:step;position:relative;padding:0 0 25px 52px}
+    .steps li:last-child{padding-bottom:0}
+    .steps li::before{content:counter(step);position:absolute;left:0;top:0;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--paper);font-size:.82rem;font-weight:700}
+    .steps h3{font-size:1.04rem;margin-bottom:5px}
+    .steps p{color:var(--muted);font-size:.94rem;margin:0}
+    .faq{padding:26px;background:var(--soft);border-radius:var(--radius)}
+    .faq h3{font-size:1.04rem;margin-bottom:8px}
+    .faq p{font-size:.94rem;color:var(--muted);margin-bottom:24px}
+    .faq p:last-child{margin-bottom:0}
+    .application{display:grid;grid-template-columns:1fr 1fr;gap:50px;background:var(--navy);color:var(--paper);padding:42px;border-radius:var(--radius)}
+    .application .section-number{color:#d9d8ce}
+    .application p{color:#e0e1dc}
+    .application .notice{font-size:.9rem;border-left:3px solid var(--amber);padding-left:17px;margin-top:26px;margin-bottom:0}
+    form{display:grid;gap:17px;align-content:start;min-width:0}
+    .field{display:grid;gap:7px}
+    label{font-size:.92rem;font-weight:650}
+    input{font:inherit;width:100%;min-width:0;border:1px solid #a6afba;border-radius:7px;background:var(--white);color:var(--navy);padding:11px 13px;min-height:48px}
+    .application :focus-visible{outline:3px solid var(--amber);outline-offset:4px}
+    .demo-button{font-family:inherit;background:var(--amber);color:var(--navy);border-color:var(--amber);margin-top:5px;cursor:default;justify-self:start}
+    .form-note{font-size:.8rem;margin:0}
+    footer{padding-block:28px 36px;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    footer p{font-size:.82rem;color:var(--muted);margin:0;max-width:65ch}
+    .footer-name{font-weight:750;font-size:1.05rem}
+    @media(max-width:850px){.hero{gap:30px;padding-block:52px}.cards{gap:14px}.card{padding:22px}.section-head{gap:24px}.application{gap:30px;padding:30px}.first-grid{gap:28px}nav{gap:6px 18px}}
+    @media(max-width:680px){.wrap{width:calc(100% - 36px)}.header-inner{align-items:flex-start;gap:16px;padding-block:20px}nav{width:100%;gap:5px 19px;font-size:.85rem}.hero{grid-template-columns:1fr;padding-block:42px;gap:32px}.hero-copy{max-width:520px}.orbit-panel{max-width:420px;width:100%;justify-self:center;aspect-ratio:1.15}.orbit-panel svg{max-height:340px}.orbit-caption{bottom:17px}.section-head,.about-grid,.first-grid,.application{grid-template-columns:1fr}.section-head{gap:5px;margin-bottom:26px}.cards{grid-template-columns:1fr;gap:16px}.card{padding:26px}.card-symbol{margin-bottom:20px}.content .section-head h2{margin-bottom:15px}section.content{padding-block:44px}.about-grid{gap:26px}.application{padding:27px 22px;gap:28px}.actions{gap:10px}.button{padding-inline:17px}.application h2{font-size:1.85rem}.first-grid{gap:30px}}
+    /* P4: progressive enhancement; without JS the navigation stays visible. */
+    .menu-toggle{font:inherit;font-weight:700;padding:9px 14px;border:1px solid var(--navy);border-radius:8px;background:var(--paper);color:var(--navy);cursor:pointer}
+    .menu-toggle[hidden],#primary-navigation[hidden]{display:none!important}
+    @media(max-width:680px){.menu-toggle:not([hidden]) ~ nav{flex-direction:column;align-items:flex-start}}
+    /* P5: feedback is local to the demonstration form. */
+    .application .field-error{color:var(--amber);font-size:.85rem;margin:0}
+    .demo-button:not(:disabled){cursor:pointer}
+    .demo-button:disabled{cursor:not-allowed;opacity:.7}
+    .form-status{font-size:.9rem;margin:0}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержимому</a>
+  <header>
+    <div class="wrap header-inner">
+      <a class="brand" href="#main" aria-label="Орбита — в начало"><span class="brand-mark" aria-hidden="true"></span>Орбита</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="true" hidden>Меню</button>
+      <nav id="primary-navigation" aria-label="Основная навигация">
+        <a href="#about">О клубе</a>
+        <a href="#program">Программа</a>
+        <a href="#meetings">Встречи</a>
+        <a href="#first">Первое знакомство</a>
+        <a href="#application">Демо-заявка</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Студенческий астроклуб · учебный проект</p>
+        <h1 id="hero-title">Большой космос.<br>Понятное начало.</h1>
+        <p class="lead">«Орбита» — пример клуба для тех, кто хочет разобраться в ночном небе, задавать вопросы и обсуждать космос. Начать можно с любопытства.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#program">Изучить программу</a>
+          <a class="button button-secondary" href="#meetings">Выбрать встречу</a>
+        </div>
+        <p class="hero-note">Это учебный лендинг. Все встречи ниже — примеры, а не реальные анонсы.</p>
+      </div>
+      <div class="orbit-panel">
+        <svg viewBox="0 0 480 460" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#8291a5" stroke-width="1">
+            <ellipse cx="240" cy="220" rx="185" ry="78" transform="rotate(-29 240 220)"/>
+            <ellipse cx="240" cy="220" rx="154" ry="119" transform="rotate(37 240 220)"/>
+            <ellipse cx="240" cy="220" rx="88" ry="171" transform="rotate(22 240 220)"/>
+          </g>
+          <circle cx="240" cy="220" r="45" fill="#f0b44c"/>
+          <circle cx="240" cy="220" r="58" stroke="#f0b44c" stroke-opacity=".25"/>
+          <circle cx="93" cy="308" r="12" fill="#faf7ee"/>
+          <circle cx="359" cy="132" r="8" fill="#f0b44c"/>
+          <circle cx="282" cy="69" r="6" fill="#c3cdd7"/>
+          <circle cx="331" cy="331" r="10" fill="#8da1ba"/>
+          <g fill="#faf7ee"><circle cx="88" cy="137" r="2"/><circle cx="390" cy="244" r="2"/><circle cx="155" cy="58" r="1.5"/><circle cx="180" cy="358" r="2"/><circle cx="399" cy="94" r="1.5"/><circle cx="58" cy="224" r="1.5"/></g>
+          <path d="M374 329h12m-6-6v12M141 113h10m-5-5v10" stroke="#f0b44c" stroke-width="1.5"/>
+        </svg>
+        <span class="orbit-caption">От первого вопроса — к новым темам</span>
+      </div>
+    </section>
+
+    <section class="content wrap" id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <div><span class="section-number">01 / О клубе</span><h2 id="about-title">Любопытство важнее подготовки</h2></div>
+        <p>«Орбита» показывает, каким может быть студенческий астроклуб: спокойное знакомство с темой, понятные объяснения и обсуждение вопросов. Описание формата — учебный пример.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-box"><h3>Если вы только начинаете</h3><p>Не нужно знать названия созвездий, разбираться в физике или иметь телескоп. Базовые понятия можно обсуждать с самого начала.</p></div>
+        <div class="about-box"><h3>Если хочется разобраться вместе</h3><p>Формат адресован студентам и всем начинающим. Можно выбрать тему по интересу: от ориентирования на небе до вопросов о далеких галактиках.</p></div>
+      </div>
+    </section>
+
+    <section class="content wrap" id="program" aria-labelledby="program-title">
+      <div class="section-head">
+        <div><span class="section-number">02 / Программа</span><h2 id="program-title">Три направления для старта</h2></div>
+        <p>Учебные направления помогают сориентироваться в теме. Это примеры содержания, а не расписание или обязательный курс.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><span class="card-symbol" aria-hidden="true">✧</span><p class="card-index">НАПРАВЛЕНИЕ 01</p><h3>Знакомство с небом</h3><p>Что такое созвездия, как читать карту неба и почему вид звезд меняется в течение года. Отправная точка для первых вопросов.</p></article>
+        <article class="card"><span class="card-symbol" aria-hidden="true">◎</span><p class="card-index">НАПРАВЛЕНИЕ 02</p><h3>Основы наблюдений</h3><p>Чем отличаются наблюдения глазом, в бинокль и в телескоп. Как освещение и погода влияют на видимость объектов.</p></article>
+        <article class="card"><span class="card-symbol" aria-hidden="true">↗</span><p class="card-index">НАПРАВЛЕНИЕ 03</p><h3>Обсуждение космоса</h3><p>Планеты, звезды и галактики простыми словами. Разговор о том, что известно науке и какие вопросы остаются открытыми.</p></article>
+      </div>
+    </section>
+
+    <section class="content wrap" id="meetings" aria-labelledby="meetings-title">
+      <div class="section-head">
+        <div><span class="section-number">03 / Встречи</span><h2 id="meetings-title">С какой темы вам интересно начать?</h2></div>
+        <p>Все три карточки — демонстрационные примеры. Длительность ориентировочная; реальных дат, мест и записи на мероприятия здесь нет.</p>
+      </div>
+      <div class="cards">
+        <article class="card meeting"><span class="tag">Учебный пример</span><h3>Найти свой ориентир на небе</h3><p>Знакомство с картой неба и обсуждение того, как узнавать заметные созвездия.</p><dl><dt>Уровень</dt><dd>С нуля</dd><dt>Длительность</dt><dd>Около 45 минут</dd></dl><a href="#application">Перейти к демо-заявке →</a></article>
+        <article class="card meeting"><span class="tag">Учебный пример</span><h3>Телескоп: что внутри и снаружи</h3><p>Разговор об устройстве телескопа, увеличении и реалистичных ожиданиях от наблюдений.</p><dl><dt>Уровень</dt><dd>Начальный</dd><dt>Длительность</dt><dd>Около 60 минут</dd></dl><a href="#application">Перейти к демо-заявке →</a></article>
+        <article class="card meeting"><span class="tag">Учебный пример</span><h3>Почему звезды разные</h3><p>Обсуждение цвета, температуры и жизненного пути звезд без сложных вычислений.</p><dl><dt>Уровень</dt><dd>Начальный</dd><dt>Длительность</dt><dd>Около 50 минут</dd></dl><a href="#application">Перейти к демо-заявке →</a></article>
+      </div>
+    </section>
+
+    <section class="content wrap" id="first" aria-labelledby="first-title">
+      <div class="section-head">
+        <div><span class="section-number">04 / Первое знакомство</span><h2 id="first-title">Начать можно с одного вопроса</h2></div>
+        <p>Ниже — пример сценария знакомства с клубным форматом. Он описывает идею участия, но не подтверждает проведение встреч или регистрацию.</p>
+      </div>
+      <div class="first-grid">
+        <ol class="steps">
+          <li><h3>Найдите близкую тему</h3><p>Посмотрите направления и примеры встреч. Предварительные знания не обязательны.</p></li>
+          <li><h3>Подумайте, что вам любопытно</h3><p>Можно сформулировать вопрос или просто выбрать то, о чем хочется узнать больше.</p></li>
+          <li><h3>Познакомьтесь с демо-формой</h3><p>В этом проекте можно только увидеть пример заявки. Она ничего не отправляет и не записывает на встречу.</p></li>
+        </ol>
+        <div class="faq">
+          <h3>Нужно ли свое оборудование?</h3><p>Для обсуждения базовых тем телескоп не нужен. В этом учебном примере практические наблюдения не организуются.</p>
+          <h3>А если я не знаю терминов?</h3><p>Описанный формат рассчитан на начинающих. Незнакомые слова — повод для вопроса, а не условие допуска.</p>
+          <h3>Получится ли увидеть планеты?</h3><p>Здесь нет обещаний наблюдений: видимость зависит от условий и оборудования. Сайт не является реальным анонсом.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content wrap" id="application" aria-labelledby="application-title">
+      <div class="application">
+        <div>
+          <span class="section-number">05 / Демо-форма</span>
+          <h2 id="application-title">Демонстрационная заявка</h2>
+          <p>Так могла бы выглядеть короткая форма знакомства. Это только элемент учебного интерфейса, а не регистрация в клубе.</p>
+          <p class="notice" id="demo-explanation">Данные никуда не отправляются и не сохраняются сайтом. Кнопка выполняет только локальную проверку полей. Для знакомства с макетом не вводите реальные персональные данные.</p>
+        </div>
+        <form id="demo-form" aria-labelledby="application-title" aria-describedby="demo-explanation">
+          <div class="field"><label for="name">Имя</label><input id="name" type="text" autocomplete="off" required aria-invalid="false" aria-describedby="name-error"><p class="field-error" id="name-error" hidden></p></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="off" required aria-invalid="false" aria-describedby="email-error"><p class="field-error" id="email-error" hidden></p></div>
+          <button class="button demo-button" id="demo-submit" type="submit" disabled>Демо: без отправки</button>
+          <p class="form-note">Учебный пример. Только локальная проверка, без отправки данных.</p>
+          <p class="form-status" id="form-status" aria-live="polite" aria-atomic="true"></p>
+          <noscript><p class="form-note">Для проверки включите JavaScript. Отправка отключена.</p></noscript>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-inner"><span class="footer-name">Орбита</span><p>Учебный проект студенческого астроклуба. Все названия встреч и описания — демонстрационные примеры, не реальные анонсы.</p></div>
+  </footer>
+  <script>
+    // P4: hide links only after JavaScript has installed the controls.
+    (() => {
+      const toggle = document.getElementById("menu-toggle");
+      const navigation = document.getElementById("primary-navigation");
+      const narrow = window.matchMedia("(max-width:680px)");
+      const setOpen = (open) => {
+        navigation.hidden = !open;
+        toggle.setAttribute("aria-expanded", String(open));
+      };
+      const syncWidth = () => {
+        const active = document.activeElement;
+        toggle.hidden = !narrow.matches;
+        setOpen(!narrow.matches);
+        if (narrow.matches && navigation.contains(active)) toggle.focus();
+        if (!narrow.matches && active === toggle) navigation.querySelector("a").focus();
+      };
+      toggle.addEventListener("click", () => setOpen(navigation.hidden));
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && narrow.matches && !navigation.hidden) {
+          event.preventDefault();
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+      navigation.addEventListener("click", (event) => {
+        const link = event.target.closest("a[href]");
+        if (!link || !narrow.matches) return;
+        const target = document.getElementById(link.hash.slice(1));
+        if (!target) return;
+        setOpen(false);
+        const temporaryTabIndex = !target.hasAttribute("tabindex");
+        if (temporaryTabIndex) {
+          target.setAttribute("tabindex", "-1");
+          target.addEventListener("blur", () => target.removeAttribute("tabindex"), {once:true});
+        }
+        target.focus({preventScroll:true});
+      });
+      narrow.addEventListener("change", syncWidth);
+      syncWidth();
+    })();
+  </script>
+  <script>
+    // P5: no transport, storage or logging; fail closed if JS is unavailable.
+    (() => {
+      const form = document.getElementById("demo-form");
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const status = document.getElementById("form-status");
+      let attempted = false;
+      const announce = (message) => {
+        if (status.textContent !== message) status.textContent = message;
+      };
+      const validate = (field) => {
+        let message = "";
+        if (field === name && !field.value.trim()) message = "Введите имя: не только пробелы.";
+        if (field === email) {
+          if (field.validity.valueMissing) message = "Введите email для проверки.";
+          else if (!field.validity.valid) message = "Введите корректный email, например demo@example.test.";
+        }
+        const error = document.getElementById(field.id + "-error");
+        field.setAttribute("aria-invalid", String(Boolean(message)));
+        error.textContent = message;
+        error.hidden = !message;
+        return !message;
+      };
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        attempted = true;
+        const nameValid = validate(name);
+        const emailValid = validate(email);
+        if (!nameValid || !emailValid) {
+          announce("Проверьте выделенные поля.");
+          (nameValid ? email : name).focus();
+          return;
+        }
+        announce("Проверка пройдена. Это демонстрация: данные никуда не отправлены");
+      });
+      for (const field of [name, email]) {
+        field.addEventListener("input", () => {
+          if (attempted) validate(field);
+          announce("");
+        });
+      }
+      // Enable custom validation only after the safe submit listener is installed.
+      form.noValidate = true;
+      document.getElementById("demo-submit").disabled = false;
+    })();
+  </script>
+</body>
+</html>
