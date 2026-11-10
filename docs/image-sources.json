@@ -1,0 +1,41 @@
+[
+  {
+    "file": "earth-apollo17.jpg",
+    "title": "Земля · Apollo 17",
+    "url": "https://www.nasa.gov/wp-content/uploads/2023/03/135918main_bm1_high.jpg",
+    "source": "https://www.nasa.gov/image-article/blue-marble-image-of-earth-from-apollo-17/",
+    "credit": "NASA",
+    "alt": "Земной шар на чёрном фоне: Африка, облака и Антарктида",
+    "note": "Снимок Земли с борта Apollo 17, 1972 год.",
+    "width": 999,
+    "height": 1000,
+    "sha256": "575a8567320e1176ddaf9e9a52cb6a2e060631c2503c88ed28808e9d77d2cd0d",
+    "bytes": 238216
+  },
+  {
+    "file": "moon-galileo.jpg",
+    "title": "Луна · Galileo",
+    "url": "https://images-assets.nasa.gov/image/PIA00405/PIA00405~medium.jpg",
+    "source": "https://images.nasa.gov/details/PIA00405",
+    "credit": "NASA/JPL/USGS",
+    "alt": "Диск Луны с тёмными морями и светлыми лучами кратера Тихо",
+    "note": "Луна на снимке аппарата Galileo, 1992 год.",
+    "width": 1000,
+    "height": 1000,
+    "sha256": "fc8f9eb20667c2d3c8aa92954c86c06c8dd9a2ae93be9c78b3586dcfaface47d",
+    "bytes": 196998
+  },
+  {
+    "file": "jupiter-voyager2.jpg",
+    "title": "Юпитер · Voyager 2",
+    "url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia00/pia00343/jpeg/PIA00343.jpg",
+    "source": "https://science.nasa.gov/image-detail/amf-f8e2e3e3-eba1-48c7-a03c-a9bed0d637fa/",
+    "credit": "NASA/JPL/USGS",
+    "alt": "Юпитер с полосами облаков и Большим Красным Пятном",
+    "note": "Снимок Voyager 2, 1979 год; цвета усилены при обработке.",
+    "width": 840,
+    "height": 840,
+    "sha256": "c52b4277bef18f7fbf6471bf7a426bc5fb698b6cd94216ea587bd118e288bc42",
+    "bytes": 47334
+  }
+]

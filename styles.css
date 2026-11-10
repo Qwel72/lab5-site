@@ -93,3 +93,16 @@
     .reset-button:hover{background:#2b405e}
     .reset-button:disabled{cursor:not-allowed;opacity:.7}
 
+
+    /* Local mission photographs; no external image requests. */
+    .photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .photo-card{margin:0;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+    .photo-card img{display:block;width:100%;height:auto;background:#05080f}
+    .photo-card figcaption{padding:23px}
+    .photo-card h3{font-size:1.1rem}
+    .photo-card p{font-size:.9rem;color:var(--muted);margin-bottom:12px}
+    .photo-card a{font-size:.8rem;color:var(--muted)}
+    @media(max-width:680px){.photo-grid{grid-template-columns:1fr;gap:18px}}
+
+    /* Grid children must shrink on narrow screens (320px). */
+    .application > *{min-width:0}
